@@ -1,4 +1,3 @@
-# minecraftKubejs
 ServerEvents.recipes(event => {
   event.remove({ output: 'minecraft:crafting_table' });
   event.shaped('minecraft:crafting_table', [
@@ -9,25 +8,6 @@ ServerEvents.recipes(event => {
     a: 'minecraft:stick',
     b: { tag: 'minecraft:planks' }
   });
-});
-
-// В файле server_scripts/ваш_скрипт.js
-
-PlayerEvents.tick(event => {
-    // Выдать игроку эффект "Скорость II" на 5 минут (6000 тиков)
-    event.player.potionEffects.add('minecraft:regeneration', 600, 0); 
-});
- 
- let tickCounter = 0;
-const DELAY_TICKS = 300; 
-
-PlayerEvents.tick(event => {
-    tickCounter++; 
-    if (tickCounter >= DELAY_TICKS) {
-        event.player.potionEffects.add('minecraft:regeneration', 600, 0); 
-        console.log(`Эффект регенерации выдан после ${DELAY_TICKS} тиков.`);
-        tickCounter = 0;
-    }
 });
 let tickCounter = 0;
 const DELAY_TICKS = 100 ; 
